@@ -1,0 +1,12 @@
+#venvs
+venv/
+__pycache__/
+*.pyc
+
+#compiled files
+ingest_api
+*.o
+*.out
+
+.DS_Store
+Thumbs.db
