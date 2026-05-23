@@ -41,3 +41,14 @@ services:
     depends_on:
       - redis-cache
       - postgres-db
+
+  # grafana
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    depends_on:
+      - postgres-db
