@@ -30,10 +30,13 @@ fast, containerized c++ telemetry pipeline. scrapes host cpu and shoves it into 
 cp .env.example .env
 ```
 
-2. build & run:
+2. pull the pre-built images and run (fastest way):
 ```bash
-docker compose up -d --build
+docker compose pull
+docker compose up -d
 ```
+
+*(Run `docker compose up -d --build` if you want to compile it manually).*
 
 3. check if the agent is shipping:
 ```bash
@@ -50,6 +53,16 @@ Inside the dashboard, your PostgreSQL isn't probably initially set up. Go to the
 
 ``Take note that these are the default values inside .env. It is recommended to change these values.``
 
+Put this in the query just below setting up the dashboard to see the cpu usage:
+```sql
+SELECT 
+  ingested_at AS "time", 
+  cpu_usage, 
+  server_id
+FROM server_health
+WHERE $__timeFilter(ingested_at)
+ORDER BY ingested_at ASC;
+```
 To kill the containers:
 ```bash
 docker compose down
