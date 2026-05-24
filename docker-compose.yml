@@ -19,7 +19,7 @@ services:
 
   # ingestion
   ingestion-api:
-    image: pulse-api:latest
+    image: ghcr.io/klenndacoder69/pulse-api:latest
     build:
       context: ./api
       dockerfile: Dockerfile
@@ -32,7 +32,7 @@ services:
 
   # worker
   etl-worker:
-    image: pulse-worker:latest
+    image: ghcr.io/klenndacoder69/pulse-worker:latest
     build:
       context: ./worker
       dockerfile: Dockerfile
@@ -57,7 +57,7 @@ services:
 
   # telemetry agent (running in background as a checker)
   pulse-agent:
-    image: pulse-agent:latest
+    image: ghcr.io/klenndacoder69/pulse-agent:latest
     build:
       context: ./agent
       dockerfile: Dockerfile

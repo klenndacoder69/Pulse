@@ -23,7 +23,7 @@ RUN wget https://github.com/CrowCpp/Crow/releases/download/v1.3.2/crow_all.h
 
 COPY main.cpp .
 
-RUN g++ -O3 main.cpp -lpthread -lredis++ -lhiredis -o ingest_api
+RUN g++ -O1 main.cpp -lpthread -lredis++ -lhiredis -o ingest_api
 
 
 # prod stage
