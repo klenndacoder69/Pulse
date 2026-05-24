@@ -13,8 +13,8 @@ WORKDIR /tmp
 RUN git clone --depth 1 https://github.com/sewenew/redis-plus-plus.git \
     && cd redis-plus-plus \
     && mkdir build && cd build \
-    && cmake -DCMAKE_BUILD_TYPE=Release .. \
-    && make -j$(nproc) && make install
+    && cmake -DCMAKE_BUILD_TYPE=Release -DREDIS_PLUS_PLUS_BUILD_TEST=OFF .. \
+    && make && make install
 
 WORKDIR /app
 
