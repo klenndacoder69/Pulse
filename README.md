@@ -1,4 +1,6 @@
-# telemetry-ingest
+# Pulse
+
+<img width="1908" height="934" alt="image" src="https://github.com/user-attachments/assets/bf9c8eb4-86f2-4751-8328-ff906d9e9270" />
 
 fast, containerized c++ telemetry pipeline. scrapes host cpu and shoves it into grafana via redis/postgres.
 
@@ -40,7 +42,15 @@ docker compose logs -f pulse-agent
 
 open `localhost:3000` to see the dashboard. 
 
-to kill it:
+Inside the dashboard, your PostgreSQL isn't probably initially set up. Go to the **connections** tab and fill up these variables:
+- Host URL: postgres-db:5432
+- Database name: telemetry
+- Username: admin
+- Password: secret
+
+``Take note that these are the default values inside .env. It is recommended to change these values.``
+
+To kill the containers:
 ```bash
 docker compose down
 ```
