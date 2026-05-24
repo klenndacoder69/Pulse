@@ -10,11 +10,11 @@ RUN apt-get update && apt-get install -y \
 
 # we compile from source since it normally does not work directly when installing the system packages
 WORKDIR /tmp
-RUN git clone https://github.com/sewenew/redis-plus-plus.git \
+RUN git clone --depth 1 https://github.com/sewenew/redis-plus-plus.git \
     && cd redis-plus-plus \
     && mkdir build && cd build \
     && cmake -DCMAKE_BUILD_TYPE=Release .. \
-    && make && make install
+    && make -j$(nproc) && make install
 
 WORKDIR /app
 
