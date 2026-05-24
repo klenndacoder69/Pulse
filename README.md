@@ -4,6 +4,8 @@
 
 fast, containerized c++ telemetry pipeline. scrapes host cpu and shoves it into grafana via redis/postgres.
 
+**Live Demo:** [http://13.236.184.173:3000](http://13.236.184.173:3000) *(Read-only Viewer Mode)*
+
 ### the stack
 - **agent (`/agent`)**: c++ daemon. runs with `pid: host` to scrape true system cpu, not docker's.
 - **api (`/api`)**: c++ crow server. ingests json payloads and dumps them into redis queue.
