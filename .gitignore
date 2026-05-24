@@ -5,8 +5,12 @@ __pycache__/
 
 #compiled files
 ingest_api
+pulse_agent
 *.o
 *.out
 
 .DS_Store
 Thumbs.db
+
+# secrets — never commit
+.env

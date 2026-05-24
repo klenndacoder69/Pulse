@@ -25,7 +25,9 @@ def main():
     r = redis.Redis(host=redis_host, port=6379, decode_responses=True)
     
     pg_conn = psycopg2.connect(
-        host=db_host, port="5432", dbname="telemetry", user="admin", password="secret"
+        host=db_host, port="5432", dbname="telemetry",
+        user=os.environ.get("POSTGRES_USER", "admin"),
+        password=os.environ.get("DB_PASSWORD", "secret")
     )
     pg_conn.autocommit = True
     cursor = pg_conn.cursor()
