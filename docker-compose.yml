@@ -33,6 +33,7 @@ services:
   # worker
   etl-worker:
     image: ghcr.io/klenndacoder69/pulse-worker:latest
+    restart: always
     build:
       context: ./worker
       dockerfile: Dockerfile
