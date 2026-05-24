@@ -18,8 +18,8 @@ fast, containerized c++ telemetry pipeline. scrapes host cpu and shoves it into 
 | `6379` | redis | fast queue buffer |
 
 ### default creds (change these)
-* **grafana**: `admin` / `change_me`
-* **postgres**: user `admin`, pass `change_me`, db `telemetry`
+* **grafana**: `admin` 
+* **postgres**: user `admin`, pass `secret`, db `telemetry`
 
 ---
 
